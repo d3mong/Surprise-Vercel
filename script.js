@@ -92,14 +92,11 @@ function showPocong() {
         document.getElementById('pocongImage').style.animation = 'pocongJump 0.3s ease';
     }, 100);
     
-    // Auto redirect to quotes after 3 seconds
+    // Auto redirect back to story screen after 3 seconds
     setTimeout(() => {
-        const quotesScreen = document.getElementById('quotesScreen');
         pocongScreen.style.display = 'none';
         storyScreen.style.opacity = '1';
-        storyScreen.style.display = 'none';
-        quotesScreen.style.display = 'block';
-        generateQuote();
+        storyScreen.style.pointerEvents = 'auto';
     }, 3000);
 }
 
