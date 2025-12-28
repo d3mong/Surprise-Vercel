@@ -80,6 +80,18 @@ function showForgivenScreen() {
     }, 500);
 }
 
+function goToWhatsApp() {
+    const forgivenScreen = document.getElementById('forgivenScreen');
+    const whatsappScreen = document.getElementById('whatsappScreen');
+    
+    forgivenScreen.style.animation = 'fadeOut 0.5s ease';
+    
+    setTimeout(() => {
+        forgivenScreen.style.display = 'none';
+        whatsappScreen.style.display = 'block';
+    }, 500);
+}
+
 function showStillAngryScreen() {
     const forgivenessScreen = document.getElementById('forgivenessScreen');
     const stillAngryScreen = document.getElementById('stillAngryScreen');
