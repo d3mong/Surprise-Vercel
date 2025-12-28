@@ -56,16 +56,51 @@ function showQuestionTeaser() {
     }, 500);
 }
 
-function goToQuestions() {
+function goToForgiveness() {
     const questionTeaser = document.getElementById('questionTeaser');
-    const quotesScreen = document.getElementById('quotesScreen');
+    const forgivenessScreen = document.getElementById('forgivenessScreen');
     
     questionTeaser.style.animation = 'fadeOut 0.5s ease';
     
     setTimeout(() => {
         questionTeaser.style.display = 'none';
-        quotesScreen.style.display = 'block';
-        generateQuote();
+        forgivenessScreen.style.display = 'block';
+    }, 500);
+}
+
+function showForgivenScreen() {
+    const forgivenessScreen = document.getElementById('forgivenessScreen');
+    const forgivenScreen = document.getElementById('forgivenScreen');
+    
+    forgivenessScreen.style.animation = 'fadeOut 0.5s ease';
+    
+    setTimeout(() => {
+        forgivenessScreen.style.display = 'none';
+        forgivenScreen.style.display = 'block';
+    }, 500);
+}
+
+function showStillAngryScreen() {
+    const forgivenessScreen = document.getElementById('forgivenessScreen');
+    const stillAngryScreen = document.getElementById('stillAngryScreen');
+    
+    forgivenessScreen.style.animation = 'fadeOut 0.5s ease';
+    
+    setTimeout(() => {
+        forgivenessScreen.style.display = 'none';
+        stillAngryScreen.style.display = 'block';
+    }, 500);
+}
+
+function backToForgiveness() {
+    const stillAngryScreen = document.getElementById('stillAngryScreen');
+    const forgivenessScreen = document.getElementById('forgivenessScreen');
+    
+    stillAngryScreen.style.animation = 'fadeOut 0.5s ease';
+    
+    setTimeout(() => {
+        stillAngryScreen.style.display = 'none';
+        forgivenessScreen.style.display = 'block';
     }, 500);
 }
 

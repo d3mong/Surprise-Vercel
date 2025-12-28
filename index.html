@@ -40,13 +40,51 @@
             <p class="teaser-text">Akhirnya kamu mau cerita, tapi sebelum lanjut, aku ada pertanyaan nih...</p>
             
             <div class="teaser-buttons">
-                <button class="btn btn-teaser btn-question" onclick="goToQuestions()">
+                <button class="btn btn-teaser btn-question" onclick="goToForgiveness()">
                     ❓ Pertanyaan apa tuhh kepo aku
                 </button>
                 <button class="btn btn-teaser btn-males" id="malesBtn" onmouseover="moveButton()" onclick="moveButton()">
                     😴 Males
                 </button>
             </div>
+        </div>
+    </div>
+
+    <!-- Forgiveness Question Screen -->
+    <div id="forgivenessScreen" class="container" style="display: none;">
+        <div class="forgiveness-card">
+            <div class="forgiveness-emoji">🥺</div>
+            <h2 class="forgiveness-title">Maafin Aku Dong</h2>
+            <p class="forgiveness-text">Kamu masih marah yaa sayangkuu? <br><br>Maafin aku yang imoet ini yaa sayangg? <br><span class="pleading">pweaassee</span> 🥺</p>
+            
+            <div class="forgiveness-buttons">
+                <button class="btn btn-forgive btn-yes-forgive" onclick="showForgivenScreen()">
+                    ✨ Iyaa aku maafin
+                </button>
+                <button class="btn btn-forgive btn-no-forgive" onclick="showStillAngryScreen()">
+                    😤 Gaa aku masih marah sama kamu
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Still Angry Screen -->
+    <div id="stillAngryScreen" class="container" style="display: none;">
+        <div class="angry-card">
+            <img src="lol1.png" alt="Bocil" class="angry-image">
+            <p class="angry-text">Dasar bocil masa iyaa aku ga dimaapin, tegaa banget kamuu ishhh 😭</p>
+            <button class="btn btn-back-angry" onclick="backToForgiveness()">
+                ← Balik ke pilihan
+            </button>
+        </div>
+    </div>
+
+    <!-- Forgiven Screen -->
+    <div id="forgivenScreen" class="container" style="display: none;">
+        <div class="forgiven-card">
+            <div class="forgiven-emoji">🎉</div>
+            <h2 class="forgiven-title">Yeayyy Dimaapin!</h2>
+            <p class="forgiven-text">Makasii sayangkuu <span class="kiss-emoji">😘</span><br><span class="love-text">Aku cinta kamu</span> <span class="love-emoji">💕</span></p>
         </div>
     </div>
 
