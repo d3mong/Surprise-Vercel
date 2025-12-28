@@ -88,6 +88,40 @@
     font-size: 16px;
     margin-bottom: 40px;
     opacity: 0.9;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.heart-emoji {
+    display: inline-block;
+    animation: heartBeatSubtle 1.2s ease-in-out infinite;
+    margin-left: 5px;
+}
+
+.wink-emoji {
+    display: inline-block;
+    animation: winkAnimation 2s ease-in-out infinite;
+    margin-left: 5px;
+}
+
+@keyframes heartBeatSubtle {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+}
+
+@keyframes winkAnimation {
+    0%, 100% {
+        transform: scaleY(1);
+    }
+    50% {
+        transform: scaleY(0.1);
+    }
 }
 
 .btn-lanjut {
