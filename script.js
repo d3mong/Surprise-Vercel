@@ -32,6 +32,19 @@ const allQuotes = [...romanticQuotes, ...funnyQuotes];
 let quoteCount = 0;
 let usedQuotes = [];
 
+function startSurprise() {
+    const splash = document.getElementById('splash');
+    const main = document.getElementById('main');
+    
+    splash.classList.add('fade-out');
+    
+    setTimeout(() => {
+        splash.style.display = 'none';
+        main.style.display = 'block';
+        generateQuote();
+    }, 800);
+}
+
 function generateQuote() {
     // Jika sudah semua quotes ditampilkan, reset
     if (usedQuotes.length === allQuotes.length) {
@@ -84,9 +97,8 @@ window.addEventListener('load', () => {
         quoteCount = parseInt(savedCount);
         document.getElementById('count').textContent = quoteCount;
     }
-
-    // Generate first quote
-    generateQuote();
+    
+    // Jangan auto-generate quote, tunggu user klik "Lanjut"
 });
 
 // Keyboard shortcut: space bar untuk next quote
