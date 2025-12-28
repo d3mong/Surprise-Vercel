@@ -26,7 +26,40 @@
                 <br><br>Ceritain yaa nanti? 👀</p>
             
             <div class="story-buttons">
-                <button class="btn btn-story btn-yes" onclick="showQuotes()">✨ Ceritain</button>
+                <button class="btn btn-story btn-yes" onclick="showQuestionTeaser()">✨ Ceritain</button>
+                <button class="btn btn-story btn-no" onclick="showPocong()">😅 Ga Ceritain</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Question Teaser Screen -->
+    <div id="questionTeaser" class="container" style="display: none;">
+        <div class="teaser-card">
+            <div class="teaser-emoji">🎉</div>
+            <h2 class="teaser-title">Yeayyy!</h2>
+            <p class="teaser-text">Akhirnya kamu mau cerita, tapi sebelum lanjut, aku ada pertanyaan nih...</p>
+            
+            <div class="teaser-buttons">
+                <button class="btn btn-teaser btn-question" onclick="goToQuestions()">
+                    ❓ Pertanyaan apa tuhh kepo aku
+                </button>
+                <button class="btn btn-teaser btn-males" id="malesBtn" onmouseover="moveButton()" onclick="moveButton()">
+                    😴 Males
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Story Question Screen -->
+    <div id="storyScreen" class="container" style="display: none;">
+        <div class="story-card">
+            <div class="story-emoji">💭</div>
+            <h2 class="story-title">Gimana Hari Ini Sayang?</h2>
+            <p class="story-question">Pasti kamu punya cerita hari ini kann? 
+                <br><br>Ceritain yaa nanti? 👀</p>
+            
+            <div class="story-buttons">
+                <button class="btn btn-story btn-yes" onclick="showQuestionTeaser()">✨ Ceritain</button>
                 <button class="btn btn-story btn-no" onclick="showPocong()">😅 Ga Ceritain</button>
             </div>
         </div>

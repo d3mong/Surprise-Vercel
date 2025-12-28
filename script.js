@@ -44,17 +44,38 @@ function startSurprise() {
     }, 800);
 }
 
-function showQuotes() {
+function showQuestionTeaser() {
     const storyScreen = document.getElementById('storyScreen');
-    const quotesScreen = document.getElementById('quotesScreen');
+    const questionTeaser = document.getElementById('questionTeaser');
     
     storyScreen.style.animation = 'fadeOut 0.5s ease';
     
     setTimeout(() => {
         storyScreen.style.display = 'none';
+        questionTeaser.style.display = 'block';
+    }, 500);
+}
+
+function goToQuestions() {
+    const questionTeaser = document.getElementById('questionTeaser');
+    const quotesScreen = document.getElementById('quotesScreen');
+    
+    questionTeaser.style.animation = 'fadeOut 0.5s ease';
+    
+    setTimeout(() => {
+        questionTeaser.style.display = 'none';
         quotesScreen.style.display = 'block';
         generateQuote();
     }, 500);
+}
+
+function moveButton() {
+    const btn = document.getElementById('malesBtn');
+    const randomX = Math.random() * 200 - 100;
+    const randomY = Math.random() * 200 - 100;
+    
+    btn.style.transform = `translate(${randomX}px, ${randomY}px)`;
+    btn.style.transition = 'transform 0.3s ease';
 }
 
 function showPocong() {
