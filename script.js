@@ -34,15 +34,52 @@ let usedQuotes = [];
 
 function startSurprise() {
     const splash = document.getElementById('splash');
-    const main = document.getElementById('main');
+    const storyScreen = document.getElementById('storyScreen');
     
     splash.classList.add('fade-out');
     
     setTimeout(() => {
         splash.style.display = 'none';
-        main.style.display = 'block';
-        generateQuote();
+        storyScreen.style.display = 'block';
     }, 800);
+}
+
+function showQuotes() {
+    const storyScreen = document.getElementById('storyScreen');
+    const quotesScreen = document.getElementById('quotesScreen');
+    
+    storyScreen.style.animation = 'fadeOut 0.5s ease';
+    
+    setTimeout(() => {
+        storyScreen.style.display = 'none';
+        quotesScreen.style.display = 'block';
+        generateQuote();
+    }, 500);
+}
+
+function showPocong() {
+    const storyScreen = document.getElementById('storyScreen');
+    const pocongScreen = document.getElementById('pocongScreen');
+    
+    storyScreen.style.opacity = '0';
+    storyScreen.style.pointerEvents = 'none';
+    
+    pocongScreen.style.display = 'flex';
+    
+    // Pocong will show with animation
+    setTimeout(() => {
+        document.getElementById('pocongImage').style.animation = 'pocongJump 0.3s ease';
+    }, 100);
+    
+    // Auto redirect to quotes after 3 seconds
+    setTimeout(() => {
+        const quotesScreen = document.getElementById('quotesScreen');
+        pocongScreen.style.display = 'none';
+        storyScreen.style.opacity = '1';
+        storyScreen.style.display = 'none';
+        quotesScreen.style.display = 'block';
+        generateQuote();
+    }, 3000);
 }
 
 function generateQuote() {
@@ -95,15 +132,15 @@ window.addEventListener('load', () => {
 
     if (savedCount) {
         quoteCount = parseInt(savedCount);
-        document.getElementById('count').textContent = quoteCount;
+        if (document.getElementById('count')) {
+            document.getElementById('count').textContent = quoteCount;
+        }
     }
-    
-    // Jangan auto-generate quote, tunggu user klik "Lanjut"
 });
 
 // Keyboard shortcut: space bar untuk next quote
 document.addEventListener('keydown', (e) => {
-    if (e.code === 'Space') {
+    if (e.code === 'Space' && document.getElementById('quotesScreen').style.display === 'block') {
         e.preventDefault();
         generateQuote();
     }

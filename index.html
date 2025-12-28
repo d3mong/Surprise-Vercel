@@ -17,11 +17,26 @@
         </div>
     </div>
 
-    <!-- Main Content -->
-    <div id="main" class="container" style="display: none;">
+    <!-- Story Question Screen -->
+    <div id="storyScreen" class="container" style="display: none;">
+        <div class="story-card">
+            <div class="story-emoji">💭</div>
+            <h2 class="story-title">Gimana Hari Ini Sayang?</h2>
+            <p class="story-question">Pasti kamu punya cerita hari ini kann? 
+                <br><br>Ceritain yaa nanti? 👀</p>
+            
+            <div class="story-buttons">
+                <button class="btn btn-story btn-yes" onclick="showQuotes()">✨ Ceritain</button>
+                <button class="btn btn-story btn-no" onclick="showPocong()">😅 Ga Ceritain</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quotes Screen -->
+    <div id="quotesScreen" class="container" style="display: none;">
         <div class="card">
             <div class="heart">❤️</div>
-            <h1>Untuk Orang Terkasih</h1>
+            <h1>Kata-kata Untukmu</h1>
             
             <div class="quote-box">
                 <p id="quote" class="quote-text">Klik tombol di bawah untuk lihat kata-kata spesial untukmu</p>
@@ -41,6 +56,14 @@
         <div class="footer">
             <p>Made with ❤️ just for you</p>
         </div>
+    </div>
+
+    <!-- Pocong Scare Screen -->
+    <div id="pocongScreen" class="pocong-container" style="display: none;">
+        <img src="lol.png" alt="Pocong" class="pocong-image" id="pocongImage">
+        <audio id="scareSound" preload="auto">
+            <source src="data:audio/wav;base64,UklGRiYAAABXQVZFZm10IBAAAAABAAEAQB8AAAB9AAACABAAZGF0YQIAAAAAAAA=" type="audio/wav">
+        </audio>
     </div>
     
     <script src="script.js"></script>
